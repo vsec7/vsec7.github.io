@@ -12,6 +12,7 @@
 		}
 
 		function Generate(){
+			$("#result").empty();
 			$.each($('#keywords').val().split('\n'), function(){
 			  var link = "https://github.com/search?q=%22"+$('#target').val()+"%22 "+encodeURI(this)+"&type=Code";
 			  $('#result').append("<tr><td><input type=\"checkbox\"></td><td> <a href=\""+link+"\" target=\"_blank\">"+this+"</td></tr>");
