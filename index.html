@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Git Dork Helper</title>
+	<title>Git Dorker Helper</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta content='vsec7' name='author'/>
 	<script type="text/javascript">
@@ -14,12 +14,13 @@
 		function Generate(){
 			$("#result").empty();
 			$.each($('#keywords').val().split('\n'), function(){
-			  var link = "https://github.com/search?q=%22"+$('#target').val()+"%22 "+encodeURI(this)+"&type=Code";
+			  var link = "https://github.com/search?q="+encodeURI($('#target').val())+" "+encodeURI(this)+"&type=Code";
 			  $('#result').append("<tr><td><input type=\"checkbox\"></td><td> <a href=\""+link+"\" target=\"_blank\">"+this+"</td></tr>");
 			});
 		}
 	</script>
-	<script src="jquery-2.1.3.min.js"></script>
+	<link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+	<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 </head>
 <body>
@@ -33,10 +34,9 @@
 		</tr>
 		<tr>
 			<td>Target </td>
-			<td>: <input type="text" id="target" value="paypal"></td>
+			<td>: <input type="text" id="target" placeholder='"paypal" or org:paypal'></td>
 			<td><button onclick="Generate()"> Generate Link</button></td>
-		</tr>
-		
+		</tr>		
 	</table>		
 	<textarea id="keywords" cols="46" rows="10"></textarea> 
 	<br>
